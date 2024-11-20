@@ -7,7 +7,7 @@ ENV BP_CUSTOM_CSS=".bpw-powered{display:none!important;} .bpw-powered a{display:
 
 EXPOSE 3000
 
-# Create custom CSS file
-RUN echo ".bpw-powered{display:none!important;} .bpw-powered a{display:none!important;}" > /botpress/data/global/custom.css
+RUN mkdir -p /botpress/data/global && \
+    echo ".bpw-powered{display:none!important;} .bpw-powered a{display:none!important;}" > /botpress/data/global/custom.css
 
 CMD ["./bp"]
